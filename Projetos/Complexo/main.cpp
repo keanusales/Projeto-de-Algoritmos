@@ -3,11 +3,15 @@
 using namespace std;
 int main()
 {
-    complexo c;
-    c = inicio(33.67, 1);
+    complexo a, b, c, d;
+    a = inicio(33.67, 17.987);
+    imprime(a);
+    b = inicio(35.48, 23.5);
+    imprime(b);
+    c = soma(a, b);
     imprime(c);
-    copia(&c, 25.98);
-    imprime(c);
-    soma(23.87, 43.5);
-    ehreal(67, 1);
+    d = inicio(44.6, 0);
+    imprime(d);
+    if (ehreal(d) == 1) copia(&d, b);
+    imprime(d);
 }

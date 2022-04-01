@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1648687532 source:e:\users\paulo\desktop\keanu\ensino superior\trabalhos\período 2\projeto de algoritmos\projetos\complexo\main.cpp
+1648773186 source:e:\users\paulo\desktop\keanu\ensino superior\trabalhos\período 2\projeto de algoritmos\projetos\complexo\main.cpp
 	<iostream>
 	"auxiliar.h"
 
-1648686659 e:\users\paulo\desktop\keanu\ensino superior\trabalhos\período 2\projeto de algoritmos\projetos\complexo\auxiliar.h
+1648773256 e:\users\paulo\desktop\keanu\ensino superior\trabalhos\período 2\projeto de algoritmos\projetos\complexo\auxiliar.h
 
-1648687379 source:e:\users\paulo\desktop\keanu\ensino superior\trabalhos\período 2\projeto de algoritmos\projetos\complexo\auxiliar.cpp
+1648773475 source:e:\users\paulo\desktop\keanu\ensino superior\trabalhos\período 2\projeto de algoritmos\projetos\complexo\auxiliar.cpp
 	<iostream>
 	"auxiliar.h"
 

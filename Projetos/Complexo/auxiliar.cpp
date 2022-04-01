@@ -1,30 +1,32 @@
 #include <iostream>
 #include "auxiliar.h"
 using namespace std;
-complexo inicio(double a, int b)
+complexo inicio(double a, double b)
 {
     complexo c;
-    c.numerica = a;
-    c.imaginar = b;
+    c.real = a;
+    c.imag = b;
     return c;
 }
-void copia(complexo*c, double a)
+void copia(complexo* a, complexo b)
 {
-    c -> numerica = a;
+    a -> real = b.real;
+    a -> imag = b.imag;
 }
-void soma(double a, double b)
+complexo soma(complexo a, complexo b)
 {
-    cout << "Esse e o resultado da soma: ";
-    cout << a + b << "i" << endl;
+    complexo c;
+    c.real = a.real + b.real;
+    c.imag = a.imag + b.imag;
+    return c;
 }
-void ehreal(double a, int b)
+bool ehreal(complexo a)
 {
-    if (b == 1) cout << "O numero e: " << a << ". Ele e real.";
-    else cout << "O numero e: " << a << "i. Ele nao e real.";
+    if (a.imag == 0) return true;
+    else return false;
 }
-void imprime(complexo c)
+void imprime(complexo a)
 {
     cout << "Esse e o numero armazenado: ";
-    cout << c.numerica;
-    if (c.imaginar == 1) cout << "i" << endl;
+    cout << a.real << " " << a.imag << endl;
 }
