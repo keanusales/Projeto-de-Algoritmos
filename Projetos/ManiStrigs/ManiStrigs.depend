@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1649816521 source:e:\users\paulo\desktop\keanu\ensino superior\trabalhos\período 2\projeto de algoritmos\projetos\manistrigs\main.cpp
+	<iostream>
+	"ajuda.h"
+
+1649816238 source:e:\users\paulo\desktop\keanu\ensino superior\trabalhos\período 2\projeto de algoritmos\projetos\manistrigs\ajuda.cpp
+	<iostream>
+	"ajuda.h"
+
+1649815624 e:\users\paulo\desktop\keanu\ensino superior\trabalhos\período 2\projeto de algoritmos\projetos\manistrigs\ajuda.h
+
