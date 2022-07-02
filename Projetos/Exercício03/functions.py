@@ -2,16 +2,16 @@ def callsorting(vector, algorithm):
   from datetime import datetime
   t1 = datetime.now()
   if algorithm == 1:
-    swaps, comps, travel = bubblesort(vector)
+    swaps, comps, arrays = bubblesort(vector)
     t2 = datetime.now()
   elif algorithm == 2:
-    swaps, x, comps, travel = mergesort(vector); del x
+    swaps, comps, arrays = mergesort(vector)
     t2 = datetime.now()
   else:
-    swaps, comps, travel = countingsort(vector)
+    swaps, comps, arrays = countingsort(vector)
     t2 = datetime.now()
   diff = (t2 - t1).total_seconds()
-  return swaps, comps, travel, diff
+  return swaps, comps, diff, arrays
 
 def bubblesort(vector):
   flag, swaps, comps = 1, 0, 0
@@ -26,28 +26,26 @@ def bubblesort(vector):
         vector[j] = vector[j + 1]
         vector[j + 1] = Aux
     tam -= 1
-  travel = len(vector) - tam
-  return swaps, comps, travel
+  arrays = len(vector) - tam
+  return swaps, comps, arrays
 
 def mergesort(vector):
-  swaps, flag, comps, travel = 0, 0, 0, 0
+  swaps, comps, arrays = 0, 0, 0
   if len(vector) > 1:
-    flag = 1; travel += 1
+    arrays = 1
     mid = len(vector) // 2
     left, right = vector[:mid], vector[mid:]
-    sums, flag1, comp, res = mergesort(left)
-    if flag1: travel += res
-    swaps += sums; comps += comp
-    sums, flag1, comp, res = mergesort(right)
-    if flag1: travel += res
-    swaps += sums; comps += comp
-    sums, comp = merge(vector, left, right)
-    swaps += sums; comps += comp
-  return swaps, flag, comps, travel
+    swap, comp, array1 = mergesort(left)
+    swaps += swap; comps += comp
+    swap, comp, array2 = mergesort(right)
+    swaps += swap; comps += comp
+    arrays += array1 + array2
+    swap, comp = merge(vector, left, right)
+    swaps += swap; comps += comp
+  return swaps, comps, arrays
 
 def merge(vector, left, right):
-  comps, swaps = 0, 0
-  i, j, k, swaps = 0, 0, 0, 0
+  swaps, comps, i, j, k = 0, 0, 0, 0, 0
   while i < len(left) and j < len(right):
     if left[i] < right[j]:
       vector[k] = left[i]
@@ -65,26 +63,22 @@ def merge(vector, left, right):
   return swaps, comps
 
 def countingsort(vector):
-  comps, swaps, travel = 0, 0, 0
+  comps, swaps, arrays = 0, 0, 6
   maior, k, aux = vector[0], [], []
   for i in range(1, len(vector)):
-    travel += 1; comps += 1
     if vector[i] > maior: maior = vector[i]
+    comps += 1
   for i in range(maior + 1):
-    travel += 1
-    k.append(0)
+    k.append(0); comps += 1
   for i in range(len(vector)):
-    travel += 1
-    aux.append(0)
+    aux.append(0); comps += 1
     k[vector[i]] += 1
   for i in range(1, len(k)):
-    travel += 1
-    k[i] = k[i] + k[i-1]
+    k[i] = k[i] + k[i-1]; comps += 1
   for i in range(len(vector)-1, 0, -1):
-    travel += 1
-    k[vector[i]] -= 1
+    k[vector[i]] -= 1; comps += 1
     aux[k[vector[i]]] = vector[i]
   for i in range(len(vector)):
-    travel += 1; swaps += 1
+    swaps += 1; comps += 1
     vector[i] = aux[i]
-  del aux; return swaps, comps, travel
+  del aux; return swaps, comps, arrays

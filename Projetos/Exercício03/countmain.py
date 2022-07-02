@@ -13,27 +13,27 @@ while not escolha:
     escolha = int(input("Qual é a sua escolha? "))
   except ValueError:
     escolha = 0; system("cls||clear")
-    print("Entrada inválida! Entre com um inteiro")
+    print("Entrada inválida! Entre com um inteiro.")
   else:
     if escolha == 1:
-      vector = []
+      vector, pos = [], 10
       for i in range(10): vector.append(10 - i)
     elif escolha == 2:
-      vector = []
+      vector, pos = [], 30
       for i in range(100): vector.append(100 - i)
     elif escolha == 3:
-      vector = []
+      vector, pos = [], 30
       for i in range(1000): vector.append(1000 - i)
     elif escolha == 4:
-      vector = []
+      vector, pos = [], 30
       for i in range(10000): vector.append(10000 - i)
     else:
       escolha = 0; system("cls||clear")
       print("Digite um valor fornecido!")
 
 system("cls||clear")
-print("Exibindo o vetor (máximo de 20 casas):")
-for i in range(20): print(vector[i], end = " ")
+print("Exibindo o vetor (máximo de 30 casas):")
+for i in range(pos): print(vector[i], end = " ")
 
 print("\n\n[2] - Escolha a ordenação do vetor:\n")
 escolha = 0
@@ -44,7 +44,7 @@ while not escolha:
     escolha = int(input("Qual é a sua escolha? "))
   except ValueError:
     escolha = 0; system("cls||clear")
-    print("Entrada inválida! Entre com um inteiro")
+    print("Entrada inválida! Entre com um inteiro.")
   else:
     if escolha == 1:
       from random import shuffle
@@ -54,8 +54,8 @@ while not escolha:
       print("Digite um valor fornecido!")
 
 system("cls||clear")
-print("Exibindo o vetor (máximo de 20 casas):")
-for i in range(20): print(vector[i], end = " ")
+print("Exibindo o vetor (máximo de 30 casas):")
+for i in range(pos): print(vector[i], end = " ")
 
 print("\n\n[3] - Escolha o algoritmo de ordenação:\n")
 escolha = 0
@@ -67,7 +67,7 @@ while not escolha:
     escolha = int(input("Qual é a sua escolha? "))
   except ValueError:
     escolha = 0; system("cls||clear")
-    print("Entrada inválida! Entre com um inteiro")
+    print("Entrada inválida! Entre com um inteiro.")
   else:
     if escolha in [1, 2, 3]: algorithm = escolha
     else:
@@ -75,16 +75,15 @@ while not escolha:
       print("Digite um valor fornecido!")
 
 system("cls||clear")
-print("Exibindo o vetor (máximo de 20 casas):")
-for i in range(20): print(vector[i], end = " ")
+print("Exibindo o vetor (máximo de 30 casas):")
+for i in range(pos): print(vector[i], end = " ")
 
-swaps, comps, travel, diff = callsorting(vector, algorithm)
+swaps, comps, diff, arrays = callsorting(vector, algorithm)
 print("\n\n[4] - Ordenação do vetor realizada!")
 
-print("Exibindo o vetor (máximo de 20 casas):")
-for i in range(20): print(vector[i], end = " ")
+print("Exibindo o vetor (máximo de 30 casas):")
+for i in range(pos): print(vector[i], end = " ")
 print(f"\n\nQuantidade de trocas feitas: {swaps}")
 print(f"Quantidade de comparações feitas: {comps}")
-print(f"O tempo de execução do programa foi de {diff}s")
-print(f"Percorrimentos de vetores no programa: {travel}")
-print("Percorrimentos incluem vetores usados nos programas")
+print(f"O tempo de execução do algoritmo foi de {diff}s")
+print(f"Nº de vetores percorridos no algoritmo: {arrays}")
