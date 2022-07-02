@@ -69,7 +69,7 @@ while not escolha:
     escolha = 0; system("cls||clear")
     print("Entrada inválida! Entre com um inteiro.")
   else:
-    if escolha in [1, 2, 3]: algorithm = escolha
+    if escolha in [1, 2, 3]: algort = escolha
     else:
       escolha = 0; system("cls||clear")
       print("Digite um valor fornecido!")
@@ -78,7 +78,7 @@ system("cls||clear")
 print("Exibindo o vetor (máximo de 30 casas):")
 for i in range(pos): print(vector[i], end = " ")
 
-swaps, comps, diff, arrays = callsorting(vector, algorithm)
+swaps, comps, diff, arrays = callsorting(vector, algort)
 print("\n\n[4] - Ordenação do vetor realizada!")
 
 print("Exibindo o vetor (máximo de 30 casas):")

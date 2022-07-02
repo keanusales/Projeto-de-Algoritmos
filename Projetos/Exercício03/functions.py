@@ -45,7 +45,8 @@ def mergesort(vector):
   return swaps, comps, arrays
 
 def merge(vector, left, right):
-  swaps, comps, i, j, k = 0, 0, 0, 0, 0
+  i, j, k = 0, 0, 0
+  swaps, comps = 0, 0
   while i < len(left) and j < len(right):
     if left[i] < right[j]:
       vector[k] = left[i]
